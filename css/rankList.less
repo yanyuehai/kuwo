@@ -1,0 +1,289 @@
+.ku-rankList {
+    display: flex;
+    justify-content: space-between;
+
+    .left {
+        width: 242px;
+
+        .left-list {
+            box-shadow: 0 0 20px 0 rgba(65, 67, 70, .05);
+
+        }
+
+        .title {
+            padding: 15px 30px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #f2f2f2;
+
+            .btn {
+                text-align: center;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .this {
+                position: relative;
+
+                span {
+                    font-weight: 600;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 10px;
+                        background-color: #ffe443;
+                        z-index: -1;
+                    }
+                }
+            }
+        }
+
+        .ran-list {
+            margin-top: 10px;
+
+            .ran-item {
+                padding: 10px 20px;
+                display: flex;
+                align-items: center;
+
+                .pic {
+                    width: 60px;
+                    height: 60px;
+                    cursor: pointer;
+                }
+
+                .text {
+                    margin-left: 15px;
+                    font-size: 14px;
+
+                    h3 {
+                        font-weight: 600;
+                        cursor: pointer;
+                    }
+
+                    p {
+                        columns: #999;
+                        margin-top: 5px;
+                        font-weight: 300;
+                    }
+                }
+            }
+
+        }
+
+
+    }
+
+    .right {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 50px;
+
+        .tit {
+
+            width: 100%;
+
+            h1 {
+                font-size: 38px;
+                font-weight: 600;
+                margin-top: 20px;
+
+                span {
+                    font-size: 14px;
+                    color: #999;
+                    margin-left: 10px;
+                    font-weight: 300;
+                }
+            }
+
+            .msg-2 {
+                margin-top: 20px;
+                width: 100%;
+                display: flex;
+
+                .btn {
+                    padding: 12px 30px;
+                    border-radius: 40px;
+                    background-color: #f2f2f2;
+                    font-size: 14px;
+                    color: #000;
+                    display: flex;
+                    align-items: center;
+                    margin-right: 10px;
+                    cursor: pointer;
+
+
+                    .iconfont {
+                        font-size: 20px;
+                    }
+                }
+
+                .btn-this {
+                    background-color: #ffe12c;
+                }
+            }
+
+
+        }
+
+
+        .song-list {
+            margin-top: 20px;
+            width: 100%;
+
+            thead {
+                tr {
+                    th {
+
+                        color: #999;
+                        line-height: 46px;
+                        background-color: #fafafa;
+                        font-size: 14px;
+                        font-weight: 400;
+                        text-align: left;
+
+                        &:nth-child(1),
+                        &:nth-child(2),
+                        &:nth-child(5) {
+                            width: 9%;
+                        }
+
+                        &:nth-child(1) {
+                            padding-left: 20px;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    position: relative;
+
+                    td {
+                        height: 70px;
+                        line-height: 70px;
+
+                        &:nth-child(1) {
+                            text-align: center;
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+
+                        &:nth-child(1),
+                        &:nth-child(2) {
+                            width: 9%;
+                        }
+
+                        &:nth-child(2) {
+                            img {
+                                width: 54px;
+                                height: 54px;
+                                padding: 10px 0px;
+                            }
+                        }
+
+                    }
+
+                    .tab {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background-color: #f5f5f5;
+                        display: none;
+
+                        div {
+                            width: 250px;
+                            display: flex;
+                            justify-content: space-evenly;
+
+                            .iconfont {
+                                font-size: 20px;
+                                cursor: pointer;
+                            }
+                        }
+
+                    }
+
+
+                    &:hover {
+                        background-color: #f5f5f5;
+                    }
+
+                    &:hover .tab {
+                        display: block;
+                    }
+
+
+                    &:nth-child(2n) {
+                        background-color: #fafafa;
+                    }
+
+
+                }
+            }
+
+
+        }
+
+
+        .msg-4 {
+            h1 {
+                margin-top: 30px;
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 10px;
+
+                .msg4-count {
+                    font-size: 14px;
+                    font-weight: 400;
+                    margin-left: 10px;
+                }
+            }
+
+            .user-msg {
+                padding: 20px 0px;
+                border-bottom: 1px solid #f2f2f2;
+                display: flex;
+
+                .pic {
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                }
+
+                .text {
+                    margin-left: 10px;
+                    width: 820px;
+                    line-height: 22px;
+
+                    h5 {
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+
+                    .time {
+                        font-size: 14px;
+                        opacity: .5;
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+        }
+
+
+
+    }
+
+}

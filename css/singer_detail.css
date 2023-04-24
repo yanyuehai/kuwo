@@ -1,0 +1,159 @@
+.ku-singers {
+  background-color: #f5f5f5;
+  padding: 40px 0px;
+}
+.ku-singers .singers {
+  display: flex;
+}
+.ku-singers .singers .pic {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.ku-singers .singers .text {
+  margin-left: 50px;
+  height: 100%;
+  padding: 20px 0px;
+}
+.ku-singers .singers .text h1 {
+  padding: 10px 0px;
+}
+.ku-singers .singers .text .count {
+  font-size: 18px;
+  font-weight: 300;
+  color: #999;
+  line-height: 25px;
+  padding: 10px 0px;
+}
+.ku-singers .singers .text .count span {
+  font-weight: 300;
+  margin-right: 50px;
+}
+.ku-singers .singers .text .msg {
+  font-size: 14px;
+  font-weight: 300;
+  color: #666;
+}
+.ku-singers .singers .text .msg span {
+  margin-right: 20px;
+}
+.ku-singers .singers .text .msg-btn {
+  margin-top: 30px;
+  display: flex;
+}
+.ku-singers .singers .text .msg-btn .btn {
+  padding: 10px 20px;
+  background-color: #ffe12c;
+  border-radius: 40px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ku-singers .singers .text .msg-btn .btn .iconfont {
+  font-size: 20px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.ku-singer-list {
+  margin-top: 30px;
+}
+.ku-singer-list .title {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.ku-singer-list .title h3 {
+  padding: 30px 0px;
+}
+.ku-singer-list .title span {
+  font-size: 22px;
+  font-weight: 300;
+  cursor: pointer;
+}
+.ku-singer-list .title .this-title span {
+  font-weight: 600;
+  position: relative;
+}
+.ku-singer-list .title .this-title span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #ffe12c;
+  z-index: -1;
+}
+.ku-singer-list .list {
+  width: 100%;
+}
+.ku-singer-list .list .song-list {
+  width: 100%;
+}
+.ku-singer-list .list .song-list thead tr th {
+  color: #999;
+  line-height: 46px;
+  background-color: #fafafa;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+}
+.ku-singer-list .list .song-list thead tr th:nth-child(1),
+.ku-singer-list .list .song-list thead tr th:nth-child(2),
+.ku-singer-list .list .song-list thead tr th:nth-child(5) {
+  width: 9%;
+}
+.ku-singer-list .list .song-list thead tr th:nth-child(1) {
+  padding-left: 20px;
+}
+.ku-singer-list .list .song-list tbody tr {
+  position: relative;
+}
+.ku-singer-list .list .song-list tbody tr td {
+  height: 70px;
+  line-height: 70px;
+}
+.ku-singer-list .list .song-list tbody tr td:nth-child(1) {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.ku-singer-list .list .song-list tbody tr td:nth-child(1),
+.ku-singer-list .list .song-list tbody tr td:nth-child(2) {
+  width: 9%;
+}
+.ku-singer-list .list .song-list tbody tr td:nth-child(2) img {
+  width: 54px;
+  height: 54px;
+  padding: 10px 0px;
+}
+.ku-singer-list .list .song-list tbody tr .tab {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f5f5f5;
+  display: none;
+}
+.ku-singer-list .list .song-list tbody tr .tab div {
+  width: 250px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.ku-singer-list .list .song-list tbody tr .tab div .iconfont {
+  font-size: 20px;
+  cursor: pointer;
+}
+.ku-singer-list .list .song-list tbody tr:hover {
+  background-color: #f5f5f5;
+}
+.ku-singer-list .list .song-list tbody tr:hover .tab {
+  display: block;
+}
+.ku-singer-list .list .song-list tbody tr:nth-child(2n) {
+  background-color: #fafafa;
+}
+.ku-sing {
+  cursor: pointer;
+}

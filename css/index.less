@@ -1,0 +1,497 @@
+// 导航
+.ku-nav {
+        display: flex;
+        padding: 20px;
+        padding-left: 200px;
+
+        li {
+                font-size: 14px;
+                cursor: pointer;
+                margin-right: 20px;
+                position: relative;
+        }
+
+        .layui-this span {
+                font-weight: 600;
+
+                &::after {
+                        content: '';
+                        background-color: #ffe443;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 10px;
+                        z-index: -1;
+                }
+        }
+
+}
+
+
+// 轮播图
+.ku-carousel {
+
+        .layui-carousel {
+                height: 380px !important;
+                overflow: hidden;
+
+                .layui-carousel-arrow {
+                        width: 60px;
+                        height: 60px;
+                        text-align: center;
+                        line-height: 60px;
+                        font-size: 32px;
+                }
+
+                .layui-carousel-ind {
+                        top: -100px;
+
+                        ul {
+                                background-color: transparent;
+                        }
+                }
+
+                .carousel-main {
+                        height: 310px;
+                        overflow: visible;
+
+                        .mack {
+                                position: absolute;
+                                left: 0;
+                                bottom: -70px;
+                                width: 100%;
+                                height: 70px;
+                                background-size: 100%;
+                                background-repeat: no-repeat;
+                                background-position: bottom;
+                                filter: blur(15px);
+                                z-index: 1;
+                        }
+                }
+
+                .carousel-bg {
+                        padding: 0px 150px;
+                        width: 100%;
+                        height: 70px;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        position: relative;
+                        background-color: rgba(0, 0, 0, .15);
+                        z-index: 2;
+
+                        b {
+                                width: 1px;
+                                height: 30px;
+                                background-color: hsla(0, 0%, 100%, .1);
+                        }
+
+                        li {
+                                color: #fff;
+
+                                .iconfont {
+                                        color: #fff;
+                                        font-size: 20px;
+                                        padding-right: 10px;
+                                }
+                        }
+                }
+        }
+
+}
+
+
+
+// 推荐歌单
+
+.ku-playlist {
+        margin-top: 60px;
+
+        .layui-tab-title {
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                border-bottom-style: none;
+
+                h2 {
+                        font-size: 28px;
+                        font-weight: 600;
+                        margin-right: 20px;
+                }
+
+                .layui-this {
+
+                        &::after {
+                                content: none;
+                        }
+
+                        span {
+                                position: relative;
+                                font-weight: 600;
+
+                                &::after {
+                                        content: '';
+                                        background-color: #ffe443;
+                                        position: absolute;
+                                        left: 0;
+                                        bottom: 0;
+                                        width: 100%;
+                                        height: 10px;
+                                        z-index: -1;
+                                }
+                        }
+                }
+
+                p {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                }
+
+        }
+
+        .layui-tab-content {
+
+                .playlist {
+                        height: 350px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+
+                        .playlist-item {
+                                width: 242px;
+                                cursor: pointer;
+
+                                .pic_out {
+                                        position: relative;
+                                        overflow: hidden;
+                                        cursor: pointer;
+                                        height: 242px;
+
+                                        .mack {
+                                                position: absolute;
+                                                left: 0;
+                                                top: 0;
+                                                background-color: rgba(0, 0, 0, .2);
+                                                width: 100%;
+                                                height: 100%;
+                                                background-image: url();
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                opacity: 0;
+                                                transition: all .1s;
+
+                                                span {
+                                                        width: 60px;
+                                                        height: 60px;
+                                                        border-radius: 50%;
+                                                        background-color: #fff;
+                                                        display: flex;
+                                                        justify-content: center;
+                                                        align-items: center;
+
+                                                        .iconfont {
+                                                                font-size: 28px;
+                                                        }
+                                                }
+
+                                        }
+
+                                        img {
+                                                transition: all .3s;
+                                        }
+
+                                        &:hover .mack {
+                                                opacity: 1;
+                                        }
+
+                                        &:hover img {
+                                                transform: scale(1.2);
+                                        }
+                                }
+
+                                .text {
+                                        padding: 10px 0px;
+
+                                        h3 {
+                                                font-size: 16px;
+                                                font-weight: 400;
+                                                padding: 5px 0px;
+
+                                                &:hover {
+                                                        font-weight: 600;
+                                                }
+                                        }
+
+                                        p {
+                                                font-size: 14px;
+                                                color: #999;
+                                                padding: 5px 0px;
+                                        }
+                                }
+                        }
+                }
+
+        }
+}
+
+
+// 排行榜
+.ku-ranking {
+
+        .ranking-title {
+                display: flex;
+                align-items: flex-end;
+
+                h2 {
+                        font-size: 28px;
+                        font-weight: 600;
+                        margin-right: 30px;
+                }
+
+                p {
+                        display: flex;
+                        align-items: center;
+                        color: #999;
+                        font-size: 14px;
+                        cursor: pointer;
+                }
+        }
+
+        .ranking-list {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-top: 40px;
+
+                .bang {
+                        width: 242px;
+                        background-color: #fff;
+                        box-shadow: 0 0 30px 0 rgba(65, 67, 70, .08);
+
+                        .bang-title {
+                                height: 122px;
+                                background-image: url(http://img2.kuwo.cn/star/albumcover/300/92/93/306713154.jpg);
+                                background-size: 100%;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                position: relative;
+
+
+                                .tit {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        content: '';
+                                        width: 100%;
+                                        height: 100%;
+                                        background-image: url(https://h5static.kuwo.cn/upload/image/d8faf807ce667092ef29f8d62237bfbf3a1f127a6370664705722a67c8f9e23b.png);
+                                        background-size: 121px auto;
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                        z-index: 2;
+                                }
+
+                                .mack {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        background-color: rgba(0, 0, 0, .6);
+                                        z-index: 1;
+                                }
+
+                                span {
+                                        position: absolute;
+                                        right: 10px;
+                                        bottom: 10px;
+                                        width: 30px;
+                                        height: 30px;
+                                        border-radius: 50%;
+                                        background-color: #fff;
+                                        text-align: center;
+                                        line-height: 30px;
+                                        display: none;
+                                        z-index: 2;
+
+                                        .iconfont {
+                                                font-size: 18px;
+                                                color: #000;
+                                        }
+                                }
+
+                                &:hover span {
+                                        display: block;
+                                }
+                        }
+
+                        li {
+                                display: flex;
+                                align-items: center;
+                                padding: 10px 20px;
+
+                                .index {
+                                        width: 22px;
+                                        height: 46px;
+                                        font-size: 16px;
+                                        font-weight: 600;
+                                        text-align: center;
+                                }
+
+                                .top1 {
+                                        background-image: url(https://h5static.kuwo.cn/www/kw-www/img/icon_first.df06fb1.png);
+                                        background-size: 168%;
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                }
+
+                                .top2 {
+                                        background-image: url(https://h5static.kuwo.cn/www/kw-www/img/icon_secondary.d99e73e.png);
+                                        background-size: 168%;
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                }
+
+                                .top3 {
+                                        background-image: url(https://h5static.kuwo.cn/www/kw-www/img/icon_third.8abbb65.png);
+                                        background-size: 168%;
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                }
+
+                                .text {
+                                        margin-left: 20px;
+                                        line-height: 26px;
+
+                                        h4 {
+                                                font-size: 16px;
+                                                font-weight: 400;
+                                                width: 155px;
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                        font-weight: 600;
+                                                }
+                                        }
+
+                                        p {
+                                                font-size: 14px;
+                                                color: #999;
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                        color: #000;
+                                                }
+                                        }
+
+                                }
+                        }
+
+                }
+        }
+
+
+}
+
+
+
+
+// 推荐歌手
+
+.ku-singer {
+        margin-top: 50px;
+
+        .tab-singer {
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                border-bottom-style: none;
+
+                h2 {
+                        font-size: 28px;
+                        font-weight: 600;
+                        margin-right: 20px;
+                }
+
+                .layui-this {
+
+                        &::after {
+                                content: none;
+                        }
+
+                        span {
+                                position: relative;
+                                font-weight: 600;
+
+                                &::after {
+                                        content: '';
+                                        background-color: #ffe443;
+                                        position: absolute;
+                                        left: 0;
+                                        bottom: 0;
+                                        width: 100%;
+                                        height: 10px;
+                                        z-index: -1;
+                                }
+                        }
+                }
+
+                p {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                }
+        }
+
+
+        .layui-tab-content {
+                .singer {
+
+
+                        .singer-list {
+                                height: 226px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+
+                                li {
+
+                                        .pic {
+                                                width: 167px;
+                                                height: 167px;
+                                                overflow: hidden;
+                                                border-radius: 50%;
+                                                cursor: pointer;
+                                        }
+
+                                        .text {
+                                                margin-top: 15px;
+                                                width: 100%;
+                                                text-align: center;
+
+                                                h3 {
+                                                        font-size: 16px;
+                                                        line-height: 22px;
+                                                        font-weight: 400;
+                                                        cursor: pointer;
+                                                }
+
+                                                p {
+                                                        font-size: 12px;
+                                                        color: #999;
+                                                        margin-top: 6px;
+                                                }
+                                        }
+
+                                }
+
+                        }
+                }
+        }
+
+}

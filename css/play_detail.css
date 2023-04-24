@@ -1,0 +1,164 @@
+.ku-song {
+  padding: 50px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.ku-song .ku-intro {
+  width: 290px;
+}
+.ku-song .ku-intro .pic {
+  margin-bottom: 50px;
+}
+.ku-song .ku-intro .text h2 {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 600;
+  margin-bottom: 20PX;
+}
+.ku-song .ku-intro .text P {
+  width: 100%;
+  padding: 5PX;
+  height: 130PX;
+  line-height: 21px;
+  overflow: hidden;
+  -webkit-line-clamp: 6 !important;
+}
+.ku-song .ku-intro .btn {
+  margin-top: 30px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ku-song .ku-intro .btn a {
+  width: 202px;
+  height: 44px;
+  border-radius: 44px;
+  background-color: #ffe12c;
+  color: #000;
+  text-align: center;
+  line-height: 44px;
+}
+.ku-song .ku-message {
+  margin-left: 100px;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.ku-song .ku-message .msg-1 {
+  width: 100%;
+  height: 150px;
+}
+.ku-song .ku-message .msg-1 h2 {
+  font-size: 30px;
+  line-height: 42px;
+  font-weight: 600;
+}
+.ku-song .ku-message .msg-1 h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+.ku-song .ku-message .msg-1 .text {
+  margin-top: 20px;
+  display: flex;
+}
+.ku-song .ku-message .msg-1 .text p {
+  margin-right: 50px;
+  font-size: 14px;
+  color: #999;
+}
+.ku-song .ku-message .msg-1 .text p span {
+  color: #000;
+}
+.ku-song .ku-message .msg-2 {
+  width: 100%;
+  display: flex;
+}
+.ku-song .ku-message .msg-2 .btn {
+  padding: 12px 30px;
+  border-radius: 40px;
+  background-color: #f2f2f2;
+  font-size: 14px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.ku-song .ku-message .msg-2 .btn .iconfont {
+  font-size: 20px;
+}
+.ku-song .ku-message .msg-2 .btn-this {
+  background-color: #ffe12c;
+}
+.ku-song .ku-message .msg-3 {
+  position: relative;
+  margin-top: 50px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.ku-song .ku-message .msg-3 .text {
+  height: 380px;
+  overflow: hidden;
+}
+.ku-song .ku-message .msg-3 p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #666;
+}
+.ku-song .ku-message .msg-3 p:nth-child(1) {
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+}
+.ku-song .ku-message .msg-3 .msg3-btn {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  font-size: 14px;
+  color: #296294 !important;
+  line-height: 20px;
+  cursor: pointer;
+}
+.ku-song .ku-message .msg-4 h1 {
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.ku-song .ku-message .msg-4 h1 .msg4-count {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+.ku-song .ku-message .msg-4 .user-msg {
+  padding: 20px 0px;
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+}
+.ku-song .ku-message .msg-4 .user-msg .pic {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.ku-song .ku-message .msg-4 .user-msg .text {
+  margin-left: 10px;
+  width: 820px;
+  line-height: 22px;
+}
+.ku-song .ku-message .msg-4 .user-msg .text h5 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.ku-song .ku-message .msg-4 .user-msg .text p {
+  font-size: 14px;
+}
+.ku-song .ku-message .msg-4 .user-msg .text .time {
+  font-size: 14px;
+  opacity: 0.5;
+  margin-top: 5px;
+}

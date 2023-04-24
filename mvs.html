@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>酷我音乐-无损音质正版在线试听网站</title>
+    <title>Document</title>
 </head>
 <link rel="stylesheet" href="./layui/css/layui.css">
 <link rel="stylesheet" href="./css/base.css">
-<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/playlists.css">
+<link rel="stylesheet" href="./css/mvs.css">
 <link rel="stylesheet" href="./css/haed&end.css">
-<link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3792572_hfqcoodse7.css">
+<link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3792572_goutb21qeyr.css">
 <script src="./js/replace.js"></script>
 <script src="./js/jQuery.js"></script>
 <script src="./layui/layui.js"></script>
@@ -54,141 +55,33 @@
 
     <!-- 导航 -->
     <ul class="ku-nav wrappper">
-        <li class="layui-this"><span>推荐</span></li>
+        <li><span>推荐</span></li>
         <li><span>排行榜</span></li>
         <li><span>歌手</span></li>
         <li><span>歌单</span></li>
-        <li><span>MV</span></li>
+        <li class="layui-this"><span>MV</span></li>
     </ul>
 
 
-    <!-- 轮播图 -->
-    <div class="ku-carousel wrappper">
-        <div class="layui-carousel" id="test1">
-            <div carousel-item class="carousel-main">
-            </div>
-
-            <ul class="carousel-bg">
-                <li>
-                    <i class="iconfont icon-bg-win"></i>
-                    下载pc端
-                </li>
-                <b></b>
-                <li>
-                    <i class="iconfont icon-anzhuo"></i>
-                    下载Android版
-                </li>
-                <b></b>
-                <li>
-                    <i class="iconfont icon-pingguo"></i>
-                    下载iPhone版
-                </li>
-                <b></b>
-                <li>
-                    <i class="iconfont icon-diannao"></i>
-                    下载其它版本
-                </li>
-            </ul>
-
-        </div>
-    </div>
-
-
-    <!-- 推荐歌单 -->
-    <div class="ku-playlist wrappper">
-        <div class="layui-tab">
-            <ul class="layui-tab-title tab-playlist">
-                <h2>推荐歌单</h2>
-                <li class="layui-this"><span>每日推荐</span></li>
-                <li><span>翻唱</span></li>
-                <li><span>网络</span></li>
-                <li><span>伤感</span></li>
-                <li><span>欧美</span></li>
-                <p>更多<i class="iconfont icon-arrow-right"></i></p>
-            </ul>
-            <div class="layui-tab-content">
-                <div class="layui-tab-item layui-show">
-                    <div class="playlist"></div>
-                </div>
-                <div class="layui-tab-item">
-                    <div class="playlist"></div>
-                </div>
-                <div class="layui-tab-item">
-                    <div class="playlist"></div>
-                </div>
-                <div class="layui-tab-item">
-                    <div class="playlist"></div>
-                </div>
-                <div class="layui-tab-item">
-                    <div class="playlist"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- 排行榜 -->
-    <div class="ku-ranking wrappper">
-        <div class="ranking-title">
-            <h2>排行榜</h2>
-            <p><span>更多</span> <i class="iconfont icon-arrow-right"></i></p>
+    <!-- 歌单 -->
+    <div class="ku-playlists ku-mv wrappper">
+        <div class="title">
+            <div class="btn this" id="236742444">首播</div>
+            <div class="btn" id="236682731">华语</div>
+            <div class="btn" id="236742444">日韩</div>
+            <div class="btn" id="236682773">网络</div>
+            <div class="btn" id="236682735">欧美</div>
+            <div class="btn" id="236742576">现场</div>
+            <div class="btn" id="236682777">热舞</div>
+            <div class="btn" id="236742508">伤感</div>
+            <div class="btn" id="236742578">剧情</div>
         </div>
 
-        <div class="ranking-list">
-            <div class="bang">
-            </div>
 
-            <div class="bang">
-            </div>
-
-            <div class="bang">
-            </div>
-
-            <div class="bang">
-            </div>
-
-            <div class="bang">
-            </div>
+        <div class="list">
+            
         </div>
 
-    </div>
-
-
-
-    <!-- 歌手推荐 -->
-    <div class="ku-singer wrappper">
-        <div class="layui-tab">
-            <ul class="layui-tab-title tab-singer">
-                <h2>歌手推荐</h2>
-                <li class="layui-this"><span>华语</span></li>
-                <li><span>欧美</span></li>
-                <li><span>日韩</span></li>
-                <li><span>组合</span></li>
-                <p>更多<i class="iconfont icon-arrow-right"></i></p>
-            </ul>
-            <div class="layui-tab-content">
-                <div class="layui-tab-item layui-show">
-                    <div class="singer">
-                        <ul class="singer-list"></ul>
-                    </div>
-                </div>
-                <div class="layui-tab-item">
-                    <div class="singer">
-                        <ul class="singer-list"></ul>
-                    </div>
-                </div>
-                <div class="layui-tab-item">
-                    <div class="singer">
-                        <ul class="singer-list"></ul>
-                    </div>
-                </div>
-                <div class="layui-tab-item">
-                    <div class="singer">
-                        <ul class="singer-list"></ul>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
 
@@ -261,7 +154,7 @@
             <div class="copyright wrappper">
                 <p>
                     北京酷我科技有限公司版权所有 丨 网络文化经营许可证：
-                      <span>京网文[2021]2071-554号</span> 丨
+                    <span>京网文[2021]2071-554号</span> 丨
                     <span>信息网络传播视听节目许可证0109362号</span> 丨
                     增值电信业务经营许可证：
                     <sapn>京ICP证060261号</sapn>
@@ -270,7 +163,7 @@
                 <p> <span>广播电视节目制作经营许可证京字第02037号</span> 丨
                     <span>营业性演出许可证京市演1574</span> 丨
                     <span>京公网安备11010502030216号</span> 丨
-                    <span >京ICP备09014827号</span> 丨
+                    <span>京ICP备09014827号</span> 丨
                     <span>互联网宗教信息服务许可证：京（2023）0000013</span>
                 </p>
 
@@ -287,8 +180,10 @@
 
     </div>
 
-    <script src="./js/index.js"></script>
-
+    <script src="./js/mvs.js"></script>
+<script>
+    $('p').removeClass
+</script>
 </body>
 
 </html>

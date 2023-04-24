@@ -1,0 +1,76 @@
+.ku-singer-list .ku-tab1,
+.ku-singer-list .ku-tab2 {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+}
+.ku-singer-list .ku-tab1 .this,
+.ku-singer-list .ku-tab2 .this {
+  font-weight: 600;
+  background-color: #ffe443;
+}
+.ku-singer-list .ku-tab1 div,
+.ku-singer-list .ku-tab2 div {
+  padding: 5px 8px;
+  border-radius: 20px;
+  margin-right: 14px;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  cursor: pointer;
+}
+.ku-singer-list .ku-list .max-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.ku-singer-list .ku-list .max-list .max {
+  width: 173px;
+  margin-top: 40px;
+  margin-right: 20px;
+}
+.ku-singer-list .ku-list .max-list .max .pic {
+  width: 173px;
+  height: 173px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.ku-singer-list .ku-list .max-list .max .text {
+  text-align: center;
+}
+.ku-singer-list .ku-list .max-list .max .text h4 {
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.ku-singer-list .ku-list .max-list .max .text p {
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: 5px;
+  color: #999;
+}
+.ku-singer-list .ku-list .min-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.ku-singer-list .ku-list .min-list .min {
+  width: 200px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+}
+.ku-singer-list .ku-list .min-list .min .pic {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.ku-singer-list .ku-list .min-list .min p {
+  cursor: pointer;
+  font-size: 14px;
+}

@@ -1,0 +1,211 @@
+.ku-rankList {
+  display: flex;
+  justify-content: space-between;
+}
+.ku-rankList .left {
+  width: 242px;
+}
+.ku-rankList .left .left-list {
+  box-shadow: 0 0 20px 0 rgba(65, 67, 70, 0.05);
+}
+.ku-rankList .left .title {
+  padding: 15px 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f2f2f2;
+}
+.ku-rankList .left .title .btn {
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.ku-rankList .left .title .this {
+  position: relative;
+}
+.ku-rankList .left .title .this span {
+  font-weight: 600;
+}
+.ku-rankList .left .title .this span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #ffe443;
+  z-index: -1;
+}
+.ku-rankList .left .ran-list {
+  margin-top: 10px;
+}
+.ku-rankList .left .ran-list .ran-item {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+.ku-rankList .left .ran-list .ran-item .pic {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.ku-rankList .left .ran-list .ran-item .text {
+  margin-left: 15px;
+  font-size: 14px;
+}
+.ku-rankList .left .ran-list .ran-item .text h3 {
+  font-weight: 600;
+  cursor: pointer;
+}
+.ku-rankList .left .ran-list .ran-item .text p {
+  columns: #999;
+  margin-top: 5px;
+  font-weight: 300;
+}
+.ku-rankList .right {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 50px;
+}
+.ku-rankList .right .tit {
+  width: 100%;
+}
+.ku-rankList .right .tit h1 {
+  font-size: 38px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.ku-rankList .right .tit h1 span {
+  font-size: 14px;
+  color: #999;
+  margin-left: 10px;
+  font-weight: 300;
+}
+.ku-rankList .right .tit .msg-2 {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+}
+.ku-rankList .right .tit .msg-2 .btn {
+  padding: 12px 30px;
+  border-radius: 40px;
+  background-color: #f2f2f2;
+  font-size: 14px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.ku-rankList .right .tit .msg-2 .btn .iconfont {
+  font-size: 20px;
+}
+.ku-rankList .right .tit .msg-2 .btn-this {
+  background-color: #ffe12c;
+}
+.ku-rankList .right .song-list {
+  margin-top: 20px;
+  width: 100%;
+}
+.ku-rankList .right .song-list thead tr th {
+  color: #999;
+  line-height: 46px;
+  background-color: #fafafa;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+}
+.ku-rankList .right .song-list thead tr th:nth-child(1),
+.ku-rankList .right .song-list thead tr th:nth-child(2),
+.ku-rankList .right .song-list thead tr th:nth-child(5) {
+  width: 9%;
+}
+.ku-rankList .right .song-list thead tr th:nth-child(1) {
+  padding-left: 20px;
+}
+.ku-rankList .right .song-list tbody tr {
+  position: relative;
+}
+.ku-rankList .right .song-list tbody tr td {
+  height: 70px;
+  line-height: 70px;
+}
+.ku-rankList .right .song-list tbody tr td:nth-child(1) {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.ku-rankList .right .song-list tbody tr td:nth-child(1),
+.ku-rankList .right .song-list tbody tr td:nth-child(2) {
+  width: 9%;
+}
+.ku-rankList .right .song-list tbody tr td:nth-child(2) img {
+  width: 54px;
+  height: 54px;
+  padding: 10px 0px;
+}
+.ku-rankList .right .song-list tbody tr .tab {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f5f5f5;
+  display: none;
+}
+.ku-rankList .right .song-list tbody tr .tab div {
+  width: 250px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.ku-rankList .right .song-list tbody tr .tab div .iconfont {
+  font-size: 20px;
+  cursor: pointer;
+}
+.ku-rankList .right .song-list tbody tr:hover {
+  background-color: #f5f5f5;
+}
+.ku-rankList .right .song-list tbody tr:hover .tab {
+  display: block;
+}
+.ku-rankList .right .song-list tbody tr:nth-child(2n) {
+  background-color: #fafafa;
+}
+.ku-rankList .right .msg-4 h1 {
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.ku-rankList .right .msg-4 h1 .msg4-count {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+.ku-rankList .right .msg-4 .user-msg {
+  padding: 20px 0px;
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+}
+.ku-rankList .right .msg-4 .user-msg .pic {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.ku-rankList .right .msg-4 .user-msg .text {
+  margin-left: 10px;
+  width: 820px;
+  line-height: 22px;
+}
+.ku-rankList .right .msg-4 .user-msg .text h5 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.ku-rankList .right .msg-4 .user-msg .text p {
+  font-size: 14px;
+}
+.ku-rankList .right .msg-4 .user-msg .text .time {
+  font-size: 14px;
+  opacity: 0.5;
+  margin-top: 5px;
+}

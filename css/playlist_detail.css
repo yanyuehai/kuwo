@@ -1,0 +1,75 @@
+.u-pic {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+.msg-3 {
+  width: 100%;
+}
+.msg-3 .song-list {
+  width: 100%;
+}
+.msg-3 .song-list thead tr th {
+  color: #999;
+  line-height: 46px;
+  background-color: #fafafa;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+}
+.msg-3 .song-list thead tr th:nth-child(1),
+.msg-3 .song-list thead tr th:nth-child(4) {
+  width: 9%;
+}
+.msg-3 .song-list thead tr th:nth-child(1) {
+  padding-left: 20px;
+}
+.msg-3 .song-list tbody tr {
+  position: relative;
+}
+.msg-3 .song-list tbody tr td {
+  height: 70px;
+  line-height: 70px;
+}
+.msg-3 .song-list tbody tr td:nth-child(1) {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.msg-3 .song-list tbody tr td:nth-child(1),
+.msg-3 .song-list tbody tr td:nth-child(4) {
+  width: 9%;
+}
+.msg-3 .song-list tbody tr .tab {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f5f5f5;
+  display: none;
+}
+.msg-3 .song-list tbody tr .tab div {
+  width: 250px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.msg-3 .song-list tbody tr .tab div .iconfont {
+  font-size: 20px;
+  cursor: pointer;
+}
+.msg-3 .song-list tbody tr:hover {
+  background-color: #f5f5f5;
+}
+.msg-3 .song-list tbody tr:hover .tab {
+  display: block;
+}
+.msg-3 .song-list tbody tr:nth-child(2n) {
+  background-color: #fafafa;
+}
+.msg-4 {
+  width: 100%;
+}
+.msg-4 .user-tit {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+}

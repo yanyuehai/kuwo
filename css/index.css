@@ -1,0 +1,355 @@
+.ku-carousel .layui-carousel {
+  height: 380px !important;
+  overflow: hidden;
+}
+.ku-carousel .layui-carousel .layui-carousel-arrow {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 32px;
+}
+.ku-carousel .layui-carousel .layui-carousel-ind {
+  top: -100px;
+}
+.ku-carousel .layui-carousel .layui-carousel-ind ul {
+  background-color: transparent;
+}
+.ku-carousel .layui-carousel .carousel-main {
+  height: 310px;
+  overflow: visible;
+}
+.ku-carousel .layui-carousel .carousel-main .mack {
+  position: absolute;
+  left: 0;
+  bottom: -70px;
+  width: 100%;
+  height: 70px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  filter: blur(15px);
+  z-index: 1;
+}
+.ku-carousel .layui-carousel .carousel-bg {
+  padding: 0px 150px;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+.ku-carousel .layui-carousel .carousel-bg b {
+  width: 1px;
+  height: 30px;
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+.ku-carousel .layui-carousel .carousel-bg li {
+  color: #fff;
+}
+.ku-carousel .layui-carousel .carousel-bg li .iconfont {
+  color: #fff;
+  font-size: 20px;
+  padding-right: 10px;
+}
+.ku-playlist {
+  margin-top: 60px;
+}
+.ku-playlist .layui-tab-title {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border-bottom-style: none;
+}
+.ku-playlist .layui-tab-title h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+.ku-playlist .layui-tab-title .layui-this::after {
+  content: none;
+}
+.ku-playlist .layui-tab-title .layui-this span {
+  position: relative;
+  font-weight: 600;
+}
+.ku-playlist .layui-tab-title .layui-this span::after {
+  content: '';
+  background-color: #ffe443;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  z-index: -1;
+}
+.ku-playlist .layui-tab-title p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.ku-playlist .layui-tab-content .playlist {
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.ku-playlist .layui-tab-content .playlist .playlist-item {
+  width: 242px;
+  cursor: pointer;
+}
+.ku-playlist .layui-tab-content .playlist .playlist-item .pic_out {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 242px;
+}
+.ku-playlist .layui-tab-content .playlist .playlist-item .pic_out .mack {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  background-image: url();
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.1s;
+}
+.ku-playlist .layui-tab-content .playlist .playlist-item .pic_out .mack span {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ku-playlist .layui-tab-content .playlist .playlist-item .pic_out .mack span .iconfont {
+  font-size: 28px;
+}
+.ku-playlist .layui-tab-content .playlist .playlist-item .pic_out img {
+  transition: all 0.3s;
+}
+.ku-playlist .layui-tab-content .playlist .playlist-item .pic_out:hover .mack {
+  opacity: 1;
+}
+.ku-playlist .layui-tab-content .playlist .playlist-item .pic_out:hover img {
+  transform: scale(1.2);
+}
+.ku-playlist .layui-tab-content .playlist .playlist-item .text {
+  padding: 10px 0px;
+}
+.ku-playlist .layui-tab-content .playlist .playlist-item .text h3 {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 5px 0px;
+}
+.ku-playlist .layui-tab-content .playlist .playlist-item .text h3:hover {
+  font-weight: 600;
+}
+.ku-playlist .layui-tab-content .playlist .playlist-item .text p {
+  font-size: 14px;
+  color: #999;
+  padding: 5px 0px;
+}
+.ku-ranking .ranking-title {
+  display: flex;
+  align-items: flex-end;
+}
+.ku-ranking .ranking-title h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-right: 30px;
+}
+.ku-ranking .ranking-title p {
+  display: flex;
+  align-items: center;
+  color: #999;
+  font-size: 14px;
+  cursor: pointer;
+}
+.ku-ranking .ranking-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+.ku-ranking .ranking-list .bang {
+  width: 242px;
+  background-color: #fff;
+  box-shadow: 0 0 30px 0 rgba(65, 67, 70, 0.08);
+}
+.ku-ranking .ranking-list .bang .bang-title {
+  height: 122px;
+  background-image: url(http://img2.kuwo.cn/star/albumcover/300/92/93/306713154.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+.ku-ranking .ranking-list .bang .bang-title .tit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url(https://h5static.kuwo.cn/upload/image/d8faf807ce667092ef29f8d62237bfbf3a1f127a6370664705722a67c8f9e23b.png);
+  background-size: 121px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+}
+.ku-ranking .ranking-list .bang .bang-title .mack {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.ku-ranking .ranking-list .bang .bang-title span {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+  line-height: 30px;
+  display: none;
+  z-index: 2;
+}
+.ku-ranking .ranking-list .bang .bang-title span .iconfont {
+  font-size: 18px;
+  color: #000;
+}
+.ku-ranking .ranking-list .bang .bang-title:hover span {
+  display: block;
+}
+.ku-ranking .ranking-list .bang li {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+.ku-ranking .ranking-list .bang li .index {
+  width: 22px;
+  height: 46px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+.ku-ranking .ranking-list .bang li .top1 {
+  background-image: url(https://h5static.kuwo.cn/www/kw-www/img/icon_first.df06fb1.png);
+  background-size: 168%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ku-ranking .ranking-list .bang li .top2 {
+  background-image: url(https://h5static.kuwo.cn/www/kw-www/img/icon_secondary.d99e73e.png);
+  background-size: 168%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ku-ranking .ranking-list .bang li .top3 {
+  background-image: url(https://h5static.kuwo.cn/www/kw-www/img/icon_third.8abbb65.png);
+  background-size: 168%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ku-ranking .ranking-list .bang li .text {
+  margin-left: 20px;
+  line-height: 26px;
+}
+.ku-ranking .ranking-list .bang li .text h4 {
+  font-size: 16px;
+  font-weight: 400;
+  width: 155px;
+  cursor: pointer;
+}
+.ku-ranking .ranking-list .bang li .text h4:hover {
+  font-weight: 600;
+}
+.ku-ranking .ranking-list .bang li .text p {
+  font-size: 14px;
+  color: #999;
+  cursor: pointer;
+}
+.ku-ranking .ranking-list .bang li .text p:hover {
+  color: #000;
+}
+.ku-singer {
+  margin-top: 50px;
+}
+.ku-singer .tab-singer {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border-bottom-style: none;
+}
+.ku-singer .tab-singer h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+.ku-singer .tab-singer .layui-this::after {
+  content: none;
+}
+.ku-singer .tab-singer .layui-this span {
+  position: relative;
+  font-weight: 600;
+}
+.ku-singer .tab-singer .layui-this span::after {
+  content: '';
+  background-color: #ffe443;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  z-index: -1;
+}
+.ku-singer .tab-singer p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.ku-singer .layui-tab-content .singer .singer-list {
+  height: 226px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ku-singer .layui-tab-content .singer .singer-list li .pic {
+  width: 167px;
+  height: 167px;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.ku-singer .layui-tab-content .singer .singer-list li .text {
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
+}
+.ku-singer .layui-tab-content .singer .singer-list li .text h3 {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.ku-singer .layui-tab-content .singer .singer-list li .text p {
+  font-size: 12px;
+  color: #999;
+  margin-top: 6px;
+}
