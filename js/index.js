@@ -285,7 +285,7 @@ layui.use('carousel', function () {
         , arrow: 'hover' //始终显示箭头
         , autoplay: true
 
-        , anim: 'fade' //切换动画方式
+        // , anim: 'fade' //切换动画方式
     });
 });
 
@@ -296,3 +296,15 @@ layui.use('element', function () {
 
     //…
 });
+
+
+$('.ku-sings').on('click', function () {
+    console.log($(this).index());
+    if($(this).index() === 6){
+        location.href = './playlists.html'
+    }else if($(this).index() === 1){
+        location.href = './rankList.html'
+    }else if($(this).index() === 5){
+        location.href = './singers.html'
+    }
+})

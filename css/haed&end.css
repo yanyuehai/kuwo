@@ -34,6 +34,7 @@
 }
 .ku-haeder .layui-nav .layui-nav-item a {
   color: #000;
+  cursor: pointer;
 }
 .ku-haeder .layui-nav .layui-nav-item .layui-nav-child a:hover {
   background-color: #ffe443;
