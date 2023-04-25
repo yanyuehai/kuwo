@@ -222,3 +222,38 @@
 .ku-sing{
     cursor: pointer;
 }
+
+
+// 分页
+.ku-paging{
+    text-align: center;
+    margin: 50px 0px;
+    .layui-laypage{
+
+        height: 42px;
+
+        a,
+        .layui-laypage-curr,
+        .layui-laypage-spr{
+            padding: 10px 20px;
+
+            font-size: 16px;
+            border: none;
+            color: #999;
+            margin: 0px 5px;
+        }
+
+        a:hover{
+            background-color: #ffe443;
+            color: #333;
+        }
+
+        .layui-laypage-curr{
+            em{
+                background-color: #ffe443;
+                color: #333;
+            }
+           
+        }
+    }
+}

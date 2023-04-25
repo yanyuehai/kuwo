@@ -157,3 +157,27 @@
 .ku-sing {
   cursor: pointer;
 }
+.ku-paging {
+  text-align: center;
+  margin: 50px 0px;
+}
+.ku-paging .layui-laypage {
+  height: 42px;
+}
+.ku-paging .layui-laypage a,
+.ku-paging .layui-laypage .layui-laypage-curr,
+.ku-paging .layui-laypage .layui-laypage-spr {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  color: #999;
+  margin: 0px 5px;
+}
+.ku-paging .layui-laypage a:hover {
+  background-color: #ffe443;
+  color: #333;
+}
+.ku-paging .layui-laypage .layui-laypage-curr em {
+  background-color: #ffe443;
+  color: #333;
+}
