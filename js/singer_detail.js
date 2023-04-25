@@ -19,12 +19,15 @@ fetch(replaceHost(`http://www.kuwo.cn/api/www/artist/artist?artistid=${location.
 
 
 // 列表
-fetch(replaceHost(`http://www.kuwo.cn/api/www/artist/artistMusic?artistid=${location.search.split('=')[1]}&pn=1&rn=20&httpsStatus=1&reqId=8e4b1420-e266-11ed-912c-253c1ee079d6`)).then(res => res.json()).then((data) => {
-    // console.log(data);
+async function singerList(url) {
+    $('.song-body').html('')
+    let f1 = fetch(replaceHost(url))
+    let f2 = f1.then(res => res.json())
+    let f3 = await f2.then((data) => {
+        // console.log(data);
 
-    data.data.list.forEach((v, i) => {
-
-        $(`<tr>
+        data.data.list.forEach((v, i) => {
+            $(`<tr>
     <td>${i + 1}</td>
     <td><img src=${v.albumpic} alt="" class="ku-sing" id=${v.rid}></td>
     <td class="ku-sing" id=${v.rid}>${v.name}</td>
@@ -41,38 +44,61 @@ fetch(replaceHost(`http://www.kuwo.cn/api/www/artist/artistMusic?artistid=${loca
     </tr>`).appendTo($('.song-body'))
 
 
-    const singers = document.getElementsByClassName('ku-sing')
-        Array.from(singers).forEach((v, i) => {
-            v.onclick = function () {
-                location.href = `./play_detail.html?id=${v.id}`
-            }
-        })
-    });
+            const singers = document.getElementsByClassName('ku-sing')
+            Array.from(singers).forEach((v, i) => {
+                v.onclick = function () {
+                    location.href = `./play_detail.html?id=${v.id}`
+                }
+            })
+        });
 
-})
+        this.count = data.data.total
+
+    })
+}
+
+
 
 // 导航栏点击
 $('.ku-nav > li').eq(0).on('click', function () {
     location.href = './index.html'
- })
- 
- $('.ku-nav > li').eq(1).on('click', function () {
-     location.href = './rankList.html'
-  })
- 
- $('.ku-nav > li').eq(2).on('click', function () {
-     location.href = './singers.html'
-  })
- 
-  $('.ku-nav > li').eq(3).on('click', function () {
-     location.href = './playlists.html'
-  })
- 
-  $('.ku-nav > li').eq(4).on('click', function () {
-     location.href = './mvs.html'
-  })
+})
+
+$('.ku-nav > li').eq(1).on('click', function () {
+    location.href = './rankList.html'
+})
+
+$('.ku-nav > li').eq(2).on('click', function () {
+    location.href = './singers.html'
+})
+
+$('.ku-nav > li').eq(3).on('click', function () {
+    location.href = './playlists.html'
+})
+
+$('.ku-nav > li').eq(4).on('click', function () {
+    location.href = './mvs.html'
+})
 
 
-  $('.ku-logo').on('click', function() {
+$('.ku-logo').on('click', function () {
     location.href = './index.html'
 })
+
+
+layui.use('laypage', function () {
+    var laypage = layui.laypage;
+    //执行一个laypage实例
+    laypage.render({
+        elem: 'test1'
+        , count: 200
+        , prev: '<em class="iconfont icon-arrow-left"></em>'
+        , next: '<em class="iconfont icon-arrow-right"></em>'
+        , jump: function (obj, first) {
+
+            singerList.apply(this, [myUrl(`http://www.kuwo.cn/api/www/artist/artistMusic?artistid=${location.search.split('=')[1]}&pn=1&rn=20&httpsStatus=1&reqId=8e4b1420-e266-11ed-912c-253c1ee079d6`, obj.curr)])
+
+        }
+    });
+
+});

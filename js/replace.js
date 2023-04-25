@@ -6,3 +6,9 @@ function replaceHost(url) {
   });
 }
 
+
+function myUrl(url, index) {
+  return url.replace(/pn=.*?&/, (x) => {
+      return `pn=${index}&`
+  } )
+}

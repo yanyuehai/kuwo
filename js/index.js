@@ -15,9 +15,20 @@ let arr = [
     'https://kwimg2.kuwo.cn/star/upload/53/89/1681697677427_.jpg'
 ]
 
-arr.forEach((v, i) => {
-    $(`<div><img src="${v}" alt=""><div class="mack" style="background-image: url(${v});"></div></div>`).appendTo($('.carousel-main'))
+fetch(replaceHost('http://www.kuwo.cn/api/www/banner/index/bannerList?httpsStatus=1&reqId=9a7c8d40-e30c-11ed-bb90-f572078b677b')).then(res => res.json()).then((data) => {
+    localStorage.setItem('data', JSON.stringify(data.data))
 })
+
+if (localStorage.getItem('data')) {
+    JSON.parse(localStorage.getItem('data')).forEach((v, i) => {
+        $(`<div><img src="${v.pic}" alt=""><div class="mack" style="background-image: url(${v.pic});"></div></div>`).appendTo($('.carousel-main'))
+    })
+}else{
+    arr.forEach((v, i) => {
+        $(`<div><img src="${v}" alt=""><div class="mack" style="background-image: url(${v});"></div></div>`).appendTo($('.carousel-main'))
+        
+    })
+}
 
 
 // 推荐歌单
@@ -99,7 +110,7 @@ function playlist(url, index) {
                 }
             })
 
-            
+
         }
 
     })
@@ -134,7 +145,7 @@ function ranking() {
 
     for (let index = 0; index < 5; index++) {
         fetch(replaceHost(topurl[index])).then(res => res.json()).then((data) => {
-           
+
             $(`
             <div class="bang-title" style="background-image: url(${data.data.musicList[0].albumpic});">
             <div class="tit" style="background-image: url(${data.data.img})"></div>
@@ -253,26 +264,26 @@ $('.tab-singer > li').on('click', function () {
 
 // 导航栏点击
 $('.ku-nav > li').eq(0).on('click', function () {
-   location.href = './index.html'
+    location.href = './index.html'
 })
 
 $('.ku-nav > li').eq(1).on('click', function () {
     location.href = './rankList.html'
- })
+})
 
 $('.ku-nav > li').eq(2).on('click', function () {
     location.href = './singers.html'
- })
+})
 
- $('.ku-nav > li').eq(3).on('click', function () {
+$('.ku-nav > li').eq(3).on('click', function () {
     location.href = './playlists.html'
- })
+})
 
- $('.ku-nav > li').eq(4).on('click', function () {
+$('.ku-nav > li').eq(4).on('click', function () {
     location.href = './mvs.html'
- })
+})
 
- $('.ku-logo').on('click', function() {
+$('.ku-logo').on('click', function () {
     location.href = './index.html'
 })
 
@@ -300,11 +311,11 @@ layui.use('element', function () {
 
 $('.ku-sings').on('click', function () {
     console.log($(this).index());
-    if($(this).index() === 6){
+    if ($(this).index() === 6) {
         location.href = './playlists.html'
-    }else if($(this).index() === 1){
+    } else if ($(this).index() === 1) {
         location.href = './rankList.html'
-    }else if($(this).index() === 5){
+    } else if ($(this).index() === 5) {
         location.href = './singers.html'
     }
 })

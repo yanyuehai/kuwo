@@ -1,7 +1,10 @@
 let url = 'http://www.kuwo.cn/api/www/music/mvList?pid=236682871&pn=1&rn=20&httpsStatus=1&reqId=f9c9ab90-e283-11ed-80ce-0752fda79b69'
-function mvs(url) {
+let count = 300
+async function mvs(url) {
     $('.list').html('')
-    fetch(replaceHost(url)).then(res => res.json()).then((data) => {
+    let f1 =  fetch(replaceHost(url))
+    let f2 = f1.then( res =>  res.json())
+    let f3 = await f2.then( (data) => {
         data.data.mvlist.forEach((v, i) => {
             $(`<div class="mv-item">
             <div class="pic">
@@ -22,43 +25,74 @@ function mvs(url) {
             </div>
         </div>`).appendTo($('.list'))
         });
+        return data.data.total
     })
+    this.count = f3
 }
 
 
-mvs(url)
 
 
-$('.btn').on('click', function() {
+$('.btn').on('click', function () {
     $('.title > .this').removeClass('this')
     $(this).addClass('this')
 
     url = `http://www.kuwo.cn/api/www/music/mvList?pid=${$(this).attr('id')}&pn=1&rn=20&httpsStatus=1&reqId=f9c9ab90-e283-11ed-80ce-0752fda79b69`
-    mvs(url)
+    layui.use('laypage', function () {
+        var laypage = layui.laypage;
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'test1'
+            , count: 200
+            , jump: function (obj, first) {
+                mvs.apply(this, [myUrl(url, obj.curr)])
+    
+            }
+        });
+    
+    });
 })
 
 
 // 导航栏点击
 $('.ku-nav > li').eq(0).on('click', function () {
     location.href = './index.html'
- })
- 
- $('.ku-nav > li').eq(1).on('click', function () {
-     location.href = './rankList.html'
-  })
- 
- $('.ku-nav > li').eq(2).on('click', function () {
-     location.href = './singers.html'
-  })
- 
-  $('.ku-nav > li').eq(3).on('click', function () {
-     location.href = './playlists.html'
-  })
- 
-  $('.ku-nav > li').eq(4).on('click', function () {
-     location.href = './mvs.html'
-  })
+})
 
-  $('.ku-logo').on('click', function() {
+$('.ku-nav > li').eq(1).on('click', function () {
+    location.href = './rankList.html'
+})
+
+$('.ku-nav > li').eq(2).on('click', function () {
+    location.href = './singers.html'
+})
+
+$('.ku-nav > li').eq(3).on('click', function () {
+    location.href = './playlists.html'
+})
+
+$('.ku-nav > li').eq(4).on('click', function () {
+    location.href = './mvs.html'
+})
+
+$('.ku-logo').on('click', function () {
     location.href = './index.html'
 })
+
+
+layui.use('laypage', function () {
+    var laypage = layui.laypage;
+    //执行一个laypage实例
+    laypage.render({
+        elem: 'test1'
+        , count: 200
+        ,prev: '<em class="iconfont icon-arrow-left"></em>'
+        ,next: '<em class="iconfont icon-arrow-right"></em>'
+        , jump: function (obj, first) {
+            mvs.apply(this, [myUrl(url, obj.curr)])
+
+        }
+    });
+
+});
+

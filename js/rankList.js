@@ -1,3 +1,5 @@
+let id = 93
+
 function Lists(index) {
     $('.ran-list').html('')
     fetch(replaceHost('http://www.kuwo.cn/api/www/bang/bang/bangMenu?httpsStatus=1&reqId=7fbe3d70-e292-11ed-80ce-0752fda79b69')).then(res => res.json()).then((data) => {
@@ -19,8 +21,24 @@ function Lists(index) {
             const ranLists = document.getElementsByClassName('ranList')
             Array.from(ranLists).forEach((v, i) => {
                 v.onclick = function () {
-                    console.log(v.id);
-                    singList(v.id)
+
+                    id = v.id
+                    layui.use('laypage', function () {
+                        var laypage = layui.laypage;
+                        //执行一个laypage实例
+                        laypage.render({
+                            elem: 'test1'
+                            , count: 200
+                            , prev: '<em class="iconfont icon-arrow-left"></em>'
+                            , next: '<em class="iconfont icon-arrow-right"></em>'
+                            , jump: function (obj, first) {
+
+                                singList.apply(this, [id, obj.curr])
+
+                            }
+                        });
+
+                    });
                 }
             })
 
@@ -38,13 +56,14 @@ $('.title > .btn').on('click', function () {
 
 
 let url = ''
-function singList(id) {
+async function singList(id, index) {
     $('.song-body').html('')
     $('.msg-4').eq(0).html('')
     $('.msg-4').eq(1).html('')
 
-    fetch(replaceHost(`http://www.kuwo.cn/api/www/bang/bang/musicList?bangId=${id}&pn=1&rn=20&httpsStatus=1&reqId=eeae8560-e296-11ed-b1b0-13144da75633`)).then(res => res.json()).then((data) => {
-        // console.log(data.data.musicList);
+    let f1 = fetch(replaceHost(myUrl(`http://www.kuwo.cn/api/www/bang/bang/musicList?bangId=${id}&pn=1&rn=20&httpsStatus=1&reqId=eeae8560-e296-11ed-b1b0-13144da75633`, index)))
+    let f2 = f1.then(res => res.json())
+    let f3 = await f2.then((data) => {
 
         data.data.musicList.forEach((v, i) => {
             $(`<tr>
@@ -71,8 +90,12 @@ function singList(id) {
             })
 
         })
+
+        return data.data.num
+
     })
 
+    this.count = f3
 
     // 热门评论
     fetch(replaceHost(`http://www.kuwo.cn/comment?type=get_rec_comment&f=web&page=1&rows=5&digest=2&sid=${id}&uid=0&prod=newWeb&httpsStatus=1&reqId=eeae3740-e296-11ed-b1b0-13144da75633`)).then(res => res.json()).then((data) => {
@@ -120,7 +143,7 @@ function singList(id) {
 
 }
 
-singList(93)
+
 
 
 // 导航栏点击
@@ -145,7 +168,24 @@ $('.ku-nav > li').eq(4).on('click', function () {
 })
 
 
-$('.ku-logo').on('click', function() {
+$('.ku-logo').on('click', function () {
     location.href = './index.html'
 })
 
+
+layui.use('laypage', function () {
+    var laypage = layui.laypage;
+    //执行一个laypage实例
+    laypage.render({
+        elem: 'test1'
+        , count: 200
+        , prev: '<em class="iconfont icon-arrow-left"></em>'
+        , next: '<em class="iconfont icon-arrow-right"></em>'
+        , jump: function (obj, first) {
+
+            singList.apply(this, [id, obj.curr])
+
+        }
+    });
+
+});
