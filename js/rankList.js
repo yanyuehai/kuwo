@@ -54,8 +54,8 @@ $('.title > .btn').on('click', function () {
     Lists($(this).index())
 })
 
-
 let url = ''
+// 渲染数据
 async function singList(id, index) {
     $('.song-body').html('')
     $('.msg-4').eq(0).html('')
@@ -66,11 +66,12 @@ async function singList(id, index) {
     let f3 = await f2.then((data) => {
 
         data.data.musicList.forEach((v, i) => {
+
             $(`<tr>
             <td>${i + 1}</td>
             <td><img src=${v.albumpic} alt="" class="ku-sing" id=${v.rid}></td>
             <td class="ku-sing" id=${v.rid}>${v.name}</td>
-            <td>${v.album}</td>
+            <td class="singers" id=${v.artistid}>${v.album}</td>
             <td>${v.songTimeMinutes}</td>
             <td class="tab">
                 <div>
@@ -82,12 +83,22 @@ async function singList(id, index) {
             </td>
             </tr>`).appendTo($('.song-body'))
 
+            // 歌曲跳转
             const singers = document.getElementsByClassName('ku-sing')
             Array.from(singers).forEach((v, i) => {
                 v.onclick = function () {
                     location.href = `./play_detail.html?id=${v.id}`
                 }
             })
+
+            // 歌手跳转
+            const singer = document.getElementsByClassName('singers')
+            Array.from(singer).forEach((v, i) => {
+                v.onclick = function () {
+                    location.href = `./singer_detail.html?id=${v.id}`
+                }
+            })
+
 
         })
 
@@ -179,6 +190,7 @@ layui.use('laypage', function () {
     laypage.render({
         elem: 'test1'
         , count: 200
+        , limit: 20
         , prev: '<em class="iconfont icon-arrow-left"></em>'
         , next: '<em class="iconfont icon-arrow-right"></em>'
         , jump: function (obj, first) {

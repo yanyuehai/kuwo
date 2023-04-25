@@ -7,7 +7,7 @@
 // 简介
 fetch(replaceHost(`http://www.kuwo.cn/api/www/music/musicInfo?mid=${location.search.split('=')[1]}&httpsStatus=1&reqId=15270690-e1b6-11ed-b76d-9975feaa3373`))
     .then(res => res.json()).then((data) => {
-        // console.log(data.data);
+        console.log(data);
         $(`            <div class="pic">
         <img src=${data.data.pic} alt="">
     </div>
@@ -26,12 +26,21 @@ fetch(replaceHost(`http://www.kuwo.cn/api/www/music/musicInfo?mid=${location.sea
     `).appendTo($('.ku-intro'))
 
         $(` <h2>${data.data.name}</h2>
-    <h3>${data.data.artist}</h3>
+    <h3 class="singers" id=${data.data.artistid}>${data.data.artist}</h3>
     <div class="text">
         <p>专辑: <span>${data.data.name}</span></p>
         <p>发行时间: <span>${data.data.releaseDate}</span></p>
     </div>
     `).appendTo($('.msg-1'))
+
+        // 歌手跳转
+        const singer = document.getElementsByClassName('singers')
+        Array.from(singer).forEach((v, i) => {
+            v.onclick = function () {
+                location.href = `./singer_detail.html?id=${v.id}`
+            }
+        })
+
     })
 
 
@@ -111,6 +120,6 @@ $('.msg3-btn').on('click', function () {
 
 
 
-$('.ku-logo').on('click', function() {
+$('.ku-logo').on('click', function () {
     location.href = './index.html'
 })

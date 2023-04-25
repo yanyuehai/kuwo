@@ -152,6 +152,7 @@ layui.use('laypage', function () {
     laypage.render({
         elem: 'test1'
         , count: 200
+        ,limit : 60
         , prev: '<em class="iconfont icon-arrow-left"></em>'
         , next: '<em class="iconfont icon-arrow-right"></em>'
         , jump: function (obj, first) {
