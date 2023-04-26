@@ -2,7 +2,7 @@ let tab1 = ['热门', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'
 let tab2 = ['全部', '华语男', '华语女', '华语组合', '日韩男', '日韩女', '日韩组合', '欧美男', '欧美女', '欧美组合', '其他']
 let url = `http://www.kuwo.cn/api/www/artist/artistInfo?category=0&pn=1&rn=60&httpsStatus=1&reqId=370244e0-e275-11ed-a76c-8f2cdca77afe`
 
-// 选项二
+// 选项一
 tab1.forEach((v, i) => {
     if (i === 0) {
         $(`<div class="this">${v}</div>`).appendTo($('.ku-tab1'))
@@ -15,8 +15,9 @@ $('.ku-tab1 div').on('click', function () {
     $('.ku-tab1 > .this').removeClass('this')
     $(this).addClass('this')
 
-    if ($('.ku-tab2 > .this').index() === 0) {
-        url = `http://www.kuwo.cn/api/www/artist/artistInfo?category=0&prefix=${$(this).html()}&pn=1&rn=60&httpsStatus=1&reqId=ba4edeb0-e277-11ed-8a5b-0fea4f38a8be`
+    if ($(this).index() === 0) {
+       console.log(1);
+        url = `http://www.kuwo.cn/api/www/artist/artistInfo?category=${$('.ku-tab2 > .this').index()}&prefix=&pn=1&rn=60&httpsStatus=1&reqId=ba4edeb0-e277-11ed-8a5b-0fea4f38a8be`
     } else {
         url = `http://www.kuwo.cn/api/www/artist/artistInfo?category=${$('.ku-tab2 > .this').index()}&prefix=${$(this).html()}&pn=1&rn=60&httpsStatus=1&reqId=f03e0200-e275-11ed-a76c-8f2cdca77afe`
 
@@ -51,7 +52,6 @@ $('.ku-tab2 div').on('click', function () {
     $(this).addClass('this')
 
     if ($('.ku-tab1 > .this').html() === '热门') {
-
         url = `http://www.kuwo.cn/api/www/artist/artistInfo?category=${$(this).index()}&prefix=&pn=1&rn=60&httpsStatus=1&reqId=cbf765c0-e276-11ed-9466-817cc3d6ce6f`
     } else {
         url = `http://www.kuwo.cn/api/www/artist/artistInfo?category=${$(this).index()}&prefix=${$('.ku-tab1 > .this').html()}&pn=1&rn=60&httpsStatus=1&reqId=f03e0200-e275-11ed-a76c-8f2cdca77afe`
