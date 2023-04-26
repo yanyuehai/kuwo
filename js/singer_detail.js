@@ -1,5 +1,24 @@
+// 歌手简介
 fetch(replaceHost(`http://www.kuwo.cn/api/www/artist/artist?artistid=${location.search.split('=')[1]}&httpsStatus=1&reqId=879eb330-e24c-11ed-a8ee-394a395caef0`)).then(res => res.json()).then((data) => {
-    // console.log(data);
+    profile(data)
+})
+
+
+// 歌曲列表
+async function singerList(url) {
+    $('.song-body').html('')
+    let f1 = fetch(replaceHost(url))
+    let f2 = f1.then(res => res.json())
+    let f3 = await f2.then((data) => {
+        songList(data.data.list)
+        this.count = data.data.total
+    })
+}
+
+
+
+// 歌手简介渲染函数
+function profile(data) {
     $(` <div class="pic">
     <img src=${data.data.pic300} alt="">
 </div>
@@ -14,49 +33,40 @@ fetch(replaceHost(`http://www.kuwo.cn/api/www/artist/artist?artistid=${location.
         <div class="btn"><i class="iconfont icon-diannao"></i>使用客户端查看歌手</div>
     </div>
 </div>`).appendTo($('.singers'))
+}
 
-})
 
-
-// 列表
-async function singerList(url) {
-    $('.song-body').html('')
-    let f1 = fetch(replaceHost(url))
-    let f2 = f1.then(res => res.json())
-    let f3 = await f2.then((data) => {
-        // console.log(data);
-
-        data.data.list.forEach((v, i) => {
-            $(`<tr>
-    <td>${i + 1}</td>
-    <td><img src=${v.albumpic} alt="" class="ku-sing" id=${v.rid}></td>
-    <td class="ku-sing" id=${v.rid}>${v.name}</td>
-    <td>${v.album}</td>
-    <td>${v.songTimeMinutes}</td>
-    <td class="tab">
+// 歌曲列表渲染函数
+function songList(data) {
+    data.forEach((v, i) => {
+        $(`<tr>
+      <td>${i + 1}</td>
+      <td><img src=${v.albumpic} alt="" class="ku-sing" id=${v.rid}></td>
+      <td class="ku-sing" id=${v.rid}> <div class="sing-icon">${v.name} <div class="ku-icon">
+    ${v.online ? '<i class="iconfont icon-wusun-"></i>' : ''}
+    ${v.hasmv ? '<i class="iconfont icon-mv"></i>' : ''}
+      </div></div></td>
+      <td>${v.album}</td>
+      <td>${v.songTimeMinutes}</td>
+      <td class="tab">
         <div>
             <i class="iconfont icon-bofang"></i>
             <i class="iconfont icon-tianjia"></i>
             <i class="iconfont icon-shoucang"></i>
             <i class="iconfont icon-xiazai"></i>
         </div>
-    </td>
-    </tr>`).appendTo($('.song-body'))
+      </td>
+      </tr>`).appendTo($('.song-body'))
 
-
-            const singers = document.getElementsByClassName('ku-sing')
-            Array.from(singers).forEach((v, i) => {
-                v.onclick = function () {
-                    location.href = `./play_detail.html?id=${v.id}`
-                }
-            })
-        });
-
-        this.count = data.data.total
-
-    })
+        // 歌名跳转事件
+        const singers = document.getElementsByClassName('ku-sing')
+        Array.from(singers).forEach((v, i) => {
+            v.onclick = function () {
+                location.href = `./play_detail.html?id=${v.id}`
+            }
+        })
+    });
 }
-
 
 
 // 导航栏点击
@@ -85,14 +95,14 @@ $('.ku-logo').on('click', function () {
     location.href = './index.html'
 })
 
-
+// 分页
 layui.use('laypage', function () {
     var laypage = layui.laypage;
     //执行一个laypage实例
     laypage.render({
         elem: 'test1'
         , count: 200
-        ,limit : 20
+        , limit: 20
         , prev: '<em class="iconfont icon-arrow-left"></em>'
         , next: '<em class="iconfont icon-arrow-right"></em>'
         , jump: function (obj, first) {

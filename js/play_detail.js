@@ -7,8 +7,33 @@
 // 简介
 fetch(replaceHost(`http://www.kuwo.cn/api/www/music/musicInfo?mid=${location.search.split('=')[1]}&httpsStatus=1&reqId=15270690-e1b6-11ed-b76d-9975feaa3373`))
     .then(res => res.json()).then((data) => {
-        console.log(data);
-        $(`            <div class="pic">
+        // 歌曲简介
+        profile(data)
+    })
+
+
+// 歌词
+fetch(replaceHost(`http://m.kuwo.cn/newh5/singles/songinfoandlrc?musicId=${location.search.split('=')[1]}&httpsStatus=1&reqId=164cd700-e1b8-11ed-99eb-aba8831e46ea`))
+    .then(res => res.json()).then((data) => {
+        songs(data.data.lrclist)
+    })
+
+// 热门评论
+fetch(replaceHost(`http://www.kuwo.cn/comment?type=get_rec_comment&f=web&page=1&rows=5&digest=15&sid=${location.search.split('=')[1]}&uid=0&prod=newWeb&httpsStatus=1&reqId=43758240-e1b8-11ed-9a01-c9b1eb2c1a77`))
+    .then(res => res.json()).then((data) => {
+        hotRemark(data)
+    })
+
+// 最新评论
+fetch(replaceHost(`http://www.kuwo.cn/comment?type=get_comment&f=web&page=1&rows=5&digest=15&sid=${location.search.split('=')[1]}&uid=0&prod=newWeb&httpsStatus=1&reqId=4389cd90-e1b8-11ed-9a01-c9b1eb2c1a77`))
+    .then(res => res.json()).then((data) => {
+        upRemark(data)
+    })
+
+
+// 歌曲简介渲染函数
+function profile(data) {
+    $(` <div class="pic">
         <img src=${data.data.pic} alt="">
     </div>
 
@@ -25,46 +50,39 @@ fetch(replaceHost(`http://www.kuwo.cn/api/www/music/musicInfo?mid=${location.sea
     </div>
     `).appendTo($('.ku-intro'))
 
-        $(` <h2>${data.data.name}</h2>
+    $(` <h2>${data.data.name}</h2>
     <h3 class="singers" id=${data.data.artistid}>${data.data.artist}</h3>
     <div class="text">
         <p>专辑: <span>${data.data.name}</span></p>
         <p>发行时间: <span>${data.data.releaseDate}</span></p>
     </div>
     `).appendTo($('.msg-1'))
-
-        // 歌手跳转
-        const singer = document.getElementsByClassName('singers')
-        Array.from(singer).forEach((v, i) => {
-            v.onclick = function () {
-                location.href = `./singer_detail.html?id=${v.id}`
-            }
-        })
-
+    // 歌手跳转
+    const singer = document.getElementsByClassName('singers')
+    Array.from(singer).forEach((v, i) => {
+        v.onclick = function () {
+            location.href = `./singer_detail.html?id=${v.id}`
+        }
     })
 
+}
 
-// 歌曲信息
-fetch(replaceHost(`http://m.kuwo.cn/newh5/singles/songinfoandlrc?musicId=${location.search.split('=')[1]}&httpsStatus=1&reqId=164cd700-e1b8-11ed-99eb-aba8831e46ea`))
-    .then(res => res.json()).then((data) => {
-        // console.log(data.data.lrclist);
 
-        data.data.lrclist.forEach((v, i) => {
-            $(`
+// 歌词渲染函数
+function songs(data) {
+    data.forEach((v, i) => {
+        $(`
             <p>${v.lineLyric}</p>
             `).appendTo($('.msg-3 > .text'))
-        });
+    });
+}
 
-    })
 
-
-// 热门评论
-fetch(replaceHost(`http://www.kuwo.cn/comment?type=get_rec_comment&f=web&page=1&rows=5&digest=15&sid=${location.search.split('=')[1]}&uid=0&prod=newWeb&httpsStatus=1&reqId=43758240-e1b8-11ed-9a01-c9b1eb2c1a77`))
-    .then(res => res.json()).then((data) => {
-
-        $(`<h1>热门评论 <span class="msg4-count">${data.total}条</span></h1>`).appendTo($('.msg-4').eq(0))
-        data.rows.forEach((v, i) => {
-            $(`<div class="user-msg">
+// 热门评论渲染函数
+function hotRemark() {
+    $(`<h1>热门评论 <span class="msg4-count">${data.total}条</span></h1>`).appendTo($('.msg-4').eq(0))
+    data.rows.forEach((v, i) => {
+        $(`<div class="user-msg">
             <div class="pic">
                 <img src=${v.u_pic} alt="">
             </div>
@@ -76,17 +94,16 @@ fetch(replaceHost(`http://www.kuwo.cn/comment?type=get_rec_comment&f=web&page=1&
                   </p>
             </div>
         </div>`).appendTo($('.msg-4').eq(0))
-        })
     })
+}
 
 
-// 最新评论
-fetch(replaceHost(`http://www.kuwo.cn/comment?type=get_comment&f=web&page=1&rows=5&digest=15&sid=${location.search.split('=')[1]}&uid=0&prod=newWeb&httpsStatus=1&reqId=4389cd90-e1b8-11ed-9a01-c9b1eb2c1a77`))
-    .then(res => res.json()).then((data) => {
-        // console.log(data);
-        $(`<h1>最新评论 <span class="msg4-count">${data.total}条</span></h1>`).appendTo($('.msg-4').eq(1))
-        data.rows.forEach((v, i) => {
-            $(`<div class="user-msg">
+
+// 最新评论渲染函数
+function upRemark(data) {
+    $(`<h1>最新评论 <span class="msg4-count">${data.total}条</span></h1>`).appendTo($('.msg-4').eq(1))
+    data.rows.forEach((v, i) => {
+        $(`<div class="user-msg">
             <div class="pic">
                 <img src=${v.u_pic} alt="">
             </div>
@@ -98,10 +115,8 @@ fetch(replaceHost(`http://www.kuwo.cn/comment?type=get_comment&f=web&page=1&rows
                   </p>
             </div>
         </div>`).appendTo($('.msg-4').eq(1))
-        })
     })
-
-
+}
 
 
 // 歌词展开
